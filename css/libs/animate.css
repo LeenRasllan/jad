@@ -3107,3 +3107,76 @@ html, body {
   width: 100%;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- تصغير خط الناف بار --- */
+/* اسم الجمعية (Logo) */
+.navbar-brand {
+    font-size: 1.1rem !important; /* حجم أصغر للاسم */
+}
+
+/* أيقونة الثلاث خطوط (القائمة) */
+.navbar-toggler-icon {
+    width: 1.2rem !important;
+    height: 1.2rem !important;
+}
+
+/* نصوص القائمة المنسدلة */
+.nav-link {
+    font-size: 0.9rem !important;
+}
+
+
+/* --- تصغير خط الفوتر --- */
+.footer-title {
+    font-size: 1rem !important; /* تصغير نص حقوق الجمعية */
+}
+
+.social img {
+    width: 1.8rem !important; /* تصغير أيقونات التواصل في الفوتر */
+}
+
+
+/* --- حل مشكلة الإزاحة للهاتف (Media Query) --- */
+@media (max-width: 768px) {
+    /* تصغير إضافي للخطوط في الشاشات الصغيرة جداً */
+    .navbar-brand {
+        font-size: 0.9rem !important;
+    }
+    
+    .footer-title {
+        font-size: 0.85rem !important;
+    }
+
+    /* إلغاء أي هوامش تسبب الإزاحة الجانبية */
+    .About-us h1 {
+        margin-left: 0 !important;
+        font-size: 1.5rem !important;
+    }
+    
+    .social {
+        margin-left: 0 !important;
+        justify-content: center;
+    }
+}
+
+/* تأمين الصفحة من الحركة الجانبية */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
