@@ -2797,6 +2797,7 @@ body{
 
 .header{
   width: 100%;
+  min-width: 600px;
  line-height: 50px;
 color: #000000;
 
