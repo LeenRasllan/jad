@@ -3068,4 +3068,42 @@ margin-left: 33%;
         /* تعديل القائمة لتناسب اللمس */
     }
 }
+/* منع الإزاحة الأفقية في كامل الموقع */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* تصحيح القائمة المنسدلة (Dropdown) في الموبايل */
+.navbar-nav {
+  padding-right: 0 !important; /* إلغاء التزيح لليمين في وضع RTL */
+  text-align: center;
+}
+
+/* تصحيح الهوامش في قسم "عن الجمعية" */
+.About-us h1 {
+  margin-left: 0 !important; /* إلغاء الـ 33% التي تسبب الإزاحة */
+  text-align: center;
+  width: 100%;
+  display: block;
+}
+
+/* تصحيح قسم أيقونات التواصل الاجتماعي */
+.social {
+  display: flex;
+  justify-content: center; /* توسيط الأيقونات بدل الهامش الثابت */
+  margin-left: 0 !important;
+  flex-wrap: wrap;
+}
+
+/* تصحيح حاويات البطاقات والصناديق */
+.allcard, .allbox {
+  display: flex;
+  flex-wrap: wrap; /* السماح للعناصر بالنزول تحت بعضها في الهاتف */
+  justify-content: center;
+  margin-left: 0 !important;
+  width: 100%;
+}
 
