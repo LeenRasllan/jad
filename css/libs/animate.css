@@ -2749,6 +2749,8 @@ html{
 }
 body{
   background-color: rgb(246, 242, 221);
+  width:100%;
+  over-flow:hidden;
 }
 
 .dots {
