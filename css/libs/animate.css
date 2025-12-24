@@ -3050,3 +3050,20 @@ margin-left: 33%;
   justify-content: space-between;
 }
 
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%; /* جعل الحاوية تأخذ عرض الشاشة تقريباً */
+        flex-direction: column; /* تحويل العناصر المصفوفة جنباً لجنب لتصبح فوق بعضها */
+    }
+
+    img {
+        max-width: 100%; /* التأكد من أن الصور لا تخرج عن حدود الشاشة */
+        height: auto;
+    }
+    
+    nav {
+        /* تعديل القائمة لتناسب اللمس */
+    }
+}
+
