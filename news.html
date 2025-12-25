@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <link rel="icon" href="img/b.png">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <title>Jad</title>
+  <link rel="stylesheet" href="css/libs/animate.css">
+
+
+<style>
+  .achievements-wrapper {
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    overflow: hidden;
+   
+  }
+  .carousel-3d {
+    width: 200px;
+    height: 150px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotate 20s infinite linear;
+  }
+  .item {
+    position: absolute;
+    width: 200px;
+    height: 150px;
+    border: 2px solid #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .item img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* توزيع الصور في شكل دائري */
+  .item:nth-child(1) { transform: rotateY(0deg) translateZ(300px); }
+  .item:nth-child(2) { transform: rotateY(60deg) translateZ(300px); }
+  .item:nth-child(3) { transform: rotateY(120deg) translateZ(300px); }
+  .item:nth-child(4) { transform: rotateY(180deg) translateZ(300px); }
+  .item:nth-child(5) { transform: rotateY(240deg) translateZ(300px); }
+  .item:nth-child(6) { transform: rotateY(300deg) translateZ(300px); }
+
+  @keyframes rotate {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+  }
+  
+  /* توقف الحركة عند تمرير الماوس */
+  .carousel-3d:hover { animation-play-state: paused; }
+</style>
+
+
+
+
+
+</head>
+
+<body>
+  <div class="dots">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+
+  <nav class="navbar navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><span style="color: #3cbbff; font-size: larger;">جمعية الأطباء الأردنيين في
+          ألمانيا- (JAD)</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
+        aria-controls="offcanvasDarkNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+        aria-labelledby="offcanvasDarkNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"><span style="color: #3cbbff; ">ججمعية الأطباء
+              الأردنيين في ألمانيا- (JAD)</span></h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+            aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">الصفحة الرئيسية</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="news.html">الأخبار</a>
+            </li>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="form.html">العضوية والإنتساب</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <span style="color: #3cbbff; ">أطباؤنا </span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="#">ابراهيم الرواشدة</a>
+                </li>
+                <li><a class="dropdown-item" href="#">باسل الدويري</a></li>
+                <li><a class="dropdown-item" href="#"></a>
+                </li>
+                <li><a class="dropdown-item" href="#"></a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                
+              </ul>
+            </li>
+          </ul>
+         <div class="language-switcher">
+    <a href="index.html" class="lang-btn active">AR</a>
+    <span class="divider"></span>
+    <a href="indexen.html" class="lang-btn">EN</a>
+</div>
+         
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <!--start header-->
+  <div class="header" style="margin-top: 50px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-sm-6"></div>
+      </div>
+    </div>
+  </div>
+  <!--end header-->
+
+
+  <!--start welcome-->
+
+  <div class="cancon container" id="home">
+    <div class="can wow rotateInDownLeft ">
+      <h4 style="font-family: 'Cairo', sans-serif;font-size: 22px; font-weight: 600;"> أهلاً وسهلاً
+      </h4>
+      <h3><span>جمعية الأطباء الأردنيين في ألمانيا- (JAD)</span></h3>
+      <h3>شركائنا في <span>الإنسانية </span>والخدمة الصحية</h3>
+      <br>
+      <div class="social wow  hinge  data-wow-duration=" 2s" data-wow-delay="3s" style="justify-content: right;">
+         <a href=" https://www.facebook.com/groups/1957611257670791/?ref=share"><img src="icon/f.png"></a>
+        <a href="https://t.me/+lqQE5fZkLAhmMWZi"><img src="icon/t.png"></a>
+        <a href="https://chat.whatsapp.com/LWyUCijnA7ZJoa5JADImzI?mode=wwt"><img src="icon/w.png"></a>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  <hr>
+
+<h2 class="ِ wow rollIn " style="color: #3cbbff;text-align: center;">الإنجازات</h2> 
+<div class="achievements-wrapper">
+  <div class="carousel-3d">
+    <div class="item"><img src="img/1.jpeg" alt="إنجاز 1"></div>
+    <div class="item"><img src="img/2.jpeg" alt="إنجاز 2"></div>
+    <div class="item"><img src="img/3.jpeg" alt="إنجاز 3"></div>
+    <div class="item"><img src="img/4.jpeg" alt="إنجاز 4"></div>
+  </div>
+</div>
+<hr>
+
+
+
+<h2 class="ِ wow rollIn " style="color: #3cbbff;text-align: center;">الأخبار</h2> 
+<section class="premium-news">
+  <div class="news-grid">
+    
+    <article class="modern-card">
+      <div class="card-image">
+        <img src="img/n1.png" alt="علاج يزن النعيمات">
+        <div class="category-badge">تغطية صحفية</div>
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">جمعية الأطباء الأردنيين في ألمانيا تؤكد استعدادها لعلاج يزن النعيمات</h2>
+        <p class="card-excerpt">تجمع الأطباء يعلن الجاهزية الكاملة لمتابعة الحالة الصحية للاعب المنتخب الوطني يزن النعيمات وتوفير أفضل سبل الرعاية.</p>
+        <div class="publishers-section">
+          <span class="source-label">نُشر في:</span>
+          <div class="chips-container">
+            <a href="https://share.google/l0g44m1G7BgGKGPm3" target="_blank" class="news-chip">جريدة الدستور</a>
+            <a href="https://www.altaj.news/article/544543" target="_blank" class="news-chip">التاج الإخباري</a>
+            <a href="https://johinanews.com/article/280691" target="_blank" class="news-chip">جهينة نيوز</a>
+            <a href="https://alanbatnews.net/article/469411" target="_blank" class="news-chip">صحيفة الأنباط</a>
+            <a href="https://nabaajordan.com/articles/479948" target="_blank" class="news-chip">وكالة نبأ</a>
+            <a href="https://deeretnanews.com/portal/?p=306095" target="_blank" class="news-chip">ديرتنا نيوز</a>
+            <a href="https://nabd.com/t/165216439-be4532" target="_blank" class="news-chip">تطبيق نبض</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="modern-card">
+      <div class="card-image">
+        <img src="img/n3.png" alt="صدى الشعب">
+        <div class="category-badge">أخبار محلية</div>
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">تغطية إعلامية في جريدة صدى الشعب ووكالة نبأ الأردن</h2>
+        <p class="card-excerpt">متابعة خاصة من جريدة صدى الشعب في عددها الصادر يوم الثلاثاء 7 تشرين الأول 2025 حول آخر النشاطات والفعاليات.</p>
+        <div class="publishers-section">
+          <span class="source-label">نُشر في:</span>
+          <div class="chips-container">
+            <a href="https://shaabjo.com/news/08/10/2025/309559/" target="_blank" class="news-chip">جريدة صدى الشعب</a>
+            <a href="https://nabaajordan.com/articles/471544" target="_blank" class="news-chip">وكالة نبأ الأردن</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="modern-card">
+      <div class="card-image">
+        <img src="img/n4.jpg" alt="تهنئة البدور">
+        <div class="category-badge">تغطية دولية</div>
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">تجمع الأطباء الأردنيين في ألمانيا يهنئ البدور</h2>
+        <p class="card-excerpt">تجمع الأطباء يبرق بالتهنئة والتقدير، وسط احتفاء إعلامي من كبرى المواقع الإخبارية الأردنية.</p>
+        <div class="publishers-section">
+          <span class="source-label">نُشر في:</span>
+          <div class="chips-container">
+            <a href="https://www.ammonnews.net/mobile/article/939977" target="_blank" class="news-chip">وكالة عمون</a>
+            <a href="https://www.akhbaralyoom.com/article/103348" target="_blank" class="news-chip">أخبار اليوم</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="modern-card">
+      <div class="card-image">
+        <img src="img/n5.png" alt="مستشفى مادبا">
+        <div class="category-badge">استثمار وصحة</div>
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">اتفاقية شراكة لإنشاء مستشفى مادبا الجديد ونظام صحي شامل</h2>
+        <p class="card-excerpt">تثمين الشراكة الاستثمارية بين القطاعين العام والخاص لبناء نظام صحي أكثر شمولاً واستدامة في المملكة.</p>
+        <div class="publishers-section">
+          <span class="source-label">نُشر في:</span>
+          <div class="chips-container">
+            <a href="https://www.ammonnews.net/mobile/article/937752" target="_blank" class="news-chip">وكالة عمون</a>
+            <a href="https://wp.me/pahOmi-4Y0E" target="_blank" class="news-chip">صراحة نيوز</a>
+            <a href="https://nabaajordan.com/articles/463877" target="_blank" class="news-chip">نبأ نيوز (د. إبراهيم الرواشدة)</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+
+    <article class="modern-card">
+      <div class="card-image">
+        <img src="img/n6.png" alt="تهنئة ولي العهد">
+        <div class="category-badge">مناسبات وطنية</div>
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">تجمع الأطباء الأردنيين في ألمانيا يهنّئ ولي العهد بعيد ميلاده الـ 31</h2>
+        <p class="card-excerpt">رفعت أسرة التجمع أسمى آيات التهنئة والتبريك لمقام سمو ولي العهد الأمير الحسين بن عبدالله الثاني بمناسبة عيد ميلاده.</p>
+        <div class="publishers-section">
+          <span class="source-label">نُشر في:</span>
+          <div class="chips-container">
+            <a href="https://share.google/12f4U32vl5CdeqF8x" target="_blank" class="news-chip">وكالة عمون</a>
+            <a href="https://www.assawsana.com/article/679775" target="_blank" class="news-chip">صحيفة السوسنة</a>
+            <a href="https://alsaa.net/article/610289" target="_blank" class="news-chip">مدار الساعة</a>
+            <a href="https://share.google/Qg04kLceHYygJZV8p" target="_blank" class="news-chip">نبأ الأردن</a>
+            <a href="https://share.google/IRHEI0oFMF68zgaka" target="_blank" class="news-chip">شبكة تواصل</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="modern-card">
+      <div class="card-image">
+        <img src="img/n7.png" alt="ندوة طبية">
+        <div class="category-badge">فعاليات تعليمية</div>
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">ندوة تعريفية حول التخصص الطبي في ألمانيا والنمسا وسويسرا</h2>
+        <p class="card-excerpt">إقامة ندوة حوارية مخصصة للأطباء وطلبة الطب المهتمين بالعمل في أوروبا بتقديم الدكتور جميل حجازين في عمان.</p>
+        <div class="publishers-section">
+          <span class="source-label">نُشر في:</span>
+          <div class="chips-container">
+            <a href="https://www.ammonnews.net/mobile/article/930318" target="_blank" class="news-chip">صحيفة عمون</a>
+            <a href="https://nabaajordan.com/articles/459624" target="_blank" class="news-chip">نبأ الأردن</a>
+            <a href="https://alsaa.net/article/609710" target="_blank" class="news-chip">مدار الساعة</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="modern-card">
+      <div class="card-image">
+        <img src="img/n8.png" alt="عيد الاستقلال">
+        <div class="category-badge">مناسبات وطنية</div>
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">تجمع الأطباء يهنئ الملك والوطن بعيد الاستقلال</h2>
+        <p class="card-excerpt">تغطية إعلامية واسعة لتهنئة أسرة التجمع لجلالة الملك عبدالله الثاني بمناسبة ذكرى استقلال المملكة الأردنية الهاشمية.</p>
+        <div class="publishers-section">
+          <span class="source-label">نُشر في:</span>
+          <div class="chips-container">
+            <a href="https://www.ammonnews.net/mobile/article/924615" target="_blank" class="news-chip">عمون</a>
+            <a href="https://www.assawsana.com/article/675588" target="_blank" class="news-chip">السوسنة</a>
+            <a href="https://garaanews.com/article/393359" target="_blank" class="news-chip">جراءة نيوز</a>
+            <a href="https://nabaajordan.com/articles/455790" target="_blank" class="news-chip">نبأ الأردن</a>
+            <a href="https://alsaa.net/article/607049" target="_blank" class="news-chip">مدار الساعة</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="modern-card">
+      <div class="card-image">
+        <img src="img/n9.png" alt="تهنئة نقابية">
+        <div class="category-badge">أخبار نقابية</div>
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">تهاني نقابية: تهنئة آية الأسمر والدكتور عيسى الخشاشنة</h2>
+        <p class="card-excerpt">أطباء الأردن في ألمانيا يهنئون آية الأسمر بمنصب النقيب، والدكتور إبراهيم الرواشدة يهنئ الدكتور عيسى الخشاشنة.</p>
+        <div class="publishers-section">
+          <span class="source-label">نُشر في:</span>
+          <div class="chips-container">
+            <a href="https://www.ammonnews.net/mobile/article/922736" target="_blank" class="news-chip">عمون (الأسمر)</a>
+            <a href="https://www.ammonnews.net/article/916575" target="_blank" class="news-chip">عمون (الخشاشنة)</a>
+            <a href="https://jornews.com/post/115586" target="_blank" class="news-chip">أخبار الأردن</a>
+            <a href="https://www.akhbaralyoom.com/article/93395" target="_blank" class="news-chip">أخبار اليوم</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+
+<hr>
+
+
+
+<h2 class="ِ wow rollIn " style="color: #3cbbff;text-align: center;">الأنشطة والندوات</h2> 
+<div class="activities-section">
+
+    <div class="als-container">
+        <div class="als-card">
+            <div class="als-poster-container">
+                <div class="als-badge">تنويه: تقرر إعادة المحاضرة 📢</div>
+                <img src="img/adn2.jpg" alt="ندوة ألمانيا" class="als-course-poster">
+            </div>
+
+            <div class="als-content">
+                <h1 class="als-title">العمل والتخصص الطبي في أوروبا</h1>
+                <p class="als-info-brief">ندوة حوارية مع الدكتور جميل حجازين للأطباء المهتمين بألمانيا والنمسا وسويسرا.</p>
+
+                <button class="als-details-btn" onclick="toggleGenericDetails(this)">اقرأ التفاصيل الكاملة +</button>
+                <div class="als-details-content">
+                    📍 <b>المكان:</b> مركز جيل اللغات – شارع الجامعة الأردنية<br>
+                    🕔 <b>الوقت:</b> 5:00 - 6:30 مساءً<br>
+                    ✅ <b>المواضيع:</b> خطوات التخصص، المعادلة (Approbation)، والحياة المهنية.
+                </div>
+
+                <button class="als-action-btn auto-date-check" 
+                        data-date="2025-06-12" 
+                        data-link="https://www.facebook.com/share/1B1Td2wSB9/">
+                    محاضرة الخميس 12.06
+                </button>
+<br>
+                <button class="als-action-btn auto-date-check" 
+                        data-date="2025-06-14" 
+                        data-link="https://www.facebook.com/share/15XnZ3pt9w/">
+                    محاضرة السبت 14.06
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="als-container">
+        <div class="als-card">
+            <div class="als-poster-container">
+                <div class="als-badge">المقاعد محدودة!</div>
+                <img src="img/adn1.jpeg" alt="ALS Course" class="als-course-poster">
+            </div>
+
+            <div class="als-content">
+                <h1 class="als-title">دورة دعم الحياة المتقدمة (ALS)</h1>
+                <p class="als-info-brief">معتمدة من المجلس الأوروبي للإنعاش (ERC). متطلب أساسي للأطباء الراغبين بالعمل في الخارج.</p>
+
+                <button class="als-details-btn" onclick="toggleGenericDetails(this)">اقرأ التفاصيل الكاملة +</button>
+                <div class="als-details-content">
+                    بالتعاون مع (EgRC) وجمعية الأطباء الأردنيين في ألمانيا (JAD).<br>
+                    📍 <b>الموقع:</b> عمان - شارع عبدالله غوشة.<br>
+                    📞 <b>للتواصل:</b> 0797070733
+                </div>
+
+                <button class="als-action-btn auto-date-check" 
+                        data-date="2025-12-23" 
+                        data-link="https://forms.gle/dLEKLeHqXvMdSrUS7">
+                    حجز مقعد في الدورة
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    // وظيفة فتح التفاصيل
+    function toggleGenericDetails(btn) {
+        const content = btn.nextElementSibling;
+        content.style.display = (content.style.display === 'block') ? 'none' : 'block';
+    }
+
+    // فحص التواريخ تلقائياً عند تحميل الصفحة
+    document.addEventListener('DOMContentLoaded', () => {
+        const today = new Date();
+        
+        document.querySelectorAll('.auto-date-check').forEach(btn => {
+            const targetDate = new Date(btn.getAttribute('data-date'));
+            const link = btn.getAttribute('data-link');
+            const originalText = btn.innerText;
+
+            if (today > targetDate) {
+                btn.innerText = originalText + " (انتهى الموعد)";
+                btn.classList.add('als-btn-expired');
+                btn.onclick = (e) => {
+                    e.preventDefault();
+                    alert("هذه الندوة/الدورة انتهت في موعدها المحدد. تابعنا للمواعيد القادمة!");
+                };
+            } else {
+                btn.classList.add('als-btn-active');
+                btn.onclick = () => window.location.href = link;
+            }
+        });
+    });
+</script>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+    integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+    crossorigin="anonymous"></script>
+
+</body>
+</html>

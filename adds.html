@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إعلانات الدورات الطبية</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-blue: #0056b3;
+            --light-blue: #e7f1ff;
+            --success-green: #28a745;
+            --text-dark: #2d3436;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            padding: 50px 20px;
+        }
+
+        /* حاوية الكرت */
+        .course-card {
+            width: 380px;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        /* منطقة الصورة */
+        .image-container {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .course-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .course-card:hover .course-image {
+            transform: scale(1.1);
+        }
+
+        /* محتوى الكرت */
+        .content {
+            padding: 25px;
+        }
+
+        .category {
+            font-size: 0.8rem;
+            color: var(--primary-blue);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .title {
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        /* زر اقرأ المزيد */
+        .read-more-btn {
+            background: none;
+            border: none;
+            color: #636e72;
+            cursor: pointer;
+            font-weight: bold;
+            padding: 0;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s;
+        }
+
+        .read-more-btn:hover { color: var(--primary-blue); }
+
+        /* التفاصيل المخفية */
+        .details-panel {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+            background: var(--light-blue);
+            border-radius: 10px;
+            font-size: 0.95rem;
+            color: #444;
+        }
+
+        .details-panel.active {
+            max-height: 200px;
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+
+        /* زر التشغيل الأساسي */
+        .action-btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-ready {
+            background-color: var(--primary-blue);
+            color: white;
+        }
+
+        .btn-ready:hover { background-color: #004494; }
+
+        .btn-waiting {
+            background-color: #dfe6e9;
+            color: #636e72;
+            cursor: not-allowed;
+        }
+
+        /* رسالة التنبيه الأنيقة (اختياري يمكن تفعيلها بالـ JS) */
+        .alert-box {
+            display: none;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            background: #fff3cd;
+            color: #856404;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #ffeeba;
+            z-index: 10;
+            font-size: 0.9rem;
+            text-align: center;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+    </style>
+</head>
+<body>
+
+    <div class="course-card">
+        <div id="dateAlert" class="alert-box"></div>
+        
+        <div class="image-container">
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=500&q=80" alt="Medical Course" class="course-image">
+        </div>
+
+        <div class="content">
+            <span class="category">دورة تخصصية</span>
+            <h2 class="title" id="courseTitle">أساسيات الأشعة المقطعية (CT Scan)</h2>
+            
+            <button class="read-more-btn" onclick="toggleDetails()">
+                تفاصيل الدورة +
+            </button>
+
+            <div id="detailsPanel" class="details-panel">
+                • شرح مفصل لأجهزة الأشعة.<br>
+                • كيفية قراءة النتائج بدقة.<br>
+                • شهادة معتمدة في نهاية الدورة.
+            </div>
+
+            <button id="mainBtn" class="action-btn" onclick="handleCourseAction()">
+                حضور الدورة
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // --- إعدادات الدورة ---
+        const config = {
+            isLive: false, // اجعلها true لتفعيل الدورة فوراً
+            startDate: "2025/02/15", // تاريخ البدء
+            link: "https://yourwebsite.com/course-page" // رابط الدورة
+        };
+
+        const btn = document.getElementById('mainBtn');
+        const alertBox = document.getElementById('dateAlert');
+
+        // تحديث شكل الزر عند التحميل
+        function init() {
+            if (!config.isLive) {
+                btn.classList.add('btn-waiting');
+                btn.innerHTML = "📅 قريباً..";
+            } else {
+                btn.classList.add('btn-ready');
+                btn.innerHTML = "ابدأ التعلم الآن ➔";
+            }
+        }
+
+        // وظيفة إظهار التفاصيل
+        function toggleDetails() {
+            const panel = document.getElementById('detailsPanel');
+            panel.classList.toggle('active');
+        }
+
+        // وظيفة الضغط على الزر
+        function handleCourseAction() {
+            if (config.isLive) {
+                window.location.href = config.link;
+            } else {
+                alertBox.innerHTML = `⚠️ الدورة ستبدأ في موعدها: <b>${config.startDate}</b> ننتظركم بشوق!`;
+                alertBox.style.display = 'block';
+                
+                // إخفاء التنبيه بعد 4 ثواني
+                setTimeout(() => { alertBox.style.display = 'none'; }, 4000);
+            }
+        }
+
+        init();
+    </script>
+
+</body>
+</html>

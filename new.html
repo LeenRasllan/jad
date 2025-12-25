@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"> <head>
+  <link rel="icon" href="img/b.png">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <title>Jad</title>
+  <link rel="stylesheet" href="css/libs/animate.css">
+
+<style>
+  .achievements-wrapper {
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    overflow: hidden;
+  }
+  .carousel-3d {
+    width: 200px;
+    height: 150px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotate 20s infinite linear;
+  }
+  .item {
+    position: absolute;
+    width: 200px;
+    height: 150px;
+    border: 2px solid #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .item img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* Distributed images in a circular shape */
+  .item:nth-child(1) { transform: rotateY(0deg) translateZ(300px); }
+  .item:nth-child(2) { transform: rotateY(60deg) translateZ(300px); }
+  .item:nth-child(3) { transform: rotateY(120deg) translateZ(300px); }
+  .item:nth-child(4) { transform: rotateY(180deg) translateZ(300px); }
+  .item:nth-child(5) { transform: rotateY(240deg) translateZ(300px); }
+  .item:nth-child(6) { transform: rotateY(300deg) translateZ(300px); }
+
+  @keyframes rotate {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+  }
+  
+  /* Stop animation on hover */
+  .carousel-3d:hover { animation-play-state: paused; }
+</style>
+
+</head>
+
+<body>
+  <div class="dots">
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+  </div>
+
+  <nav class="navbar navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><span style="color: #3cbbff; font-size: larger;">Jordanian Arabic Doctors Association in Germany - (JAD)</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
+        aria-controls="offcanvasDarkNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+        aria-labelledby="offcanvasDarkNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"><span style="color: #3cbbff; ">JAD Association</span></h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+            aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="news.html">News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="form.html">Membership & Affiliation</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <span style="color: #3cbbff; ">Our Doctors</span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="#">Ibrahim Al-Rawashdeh</a></li>
+                <li><a class="dropdown-item" href="#">Basil Al-Duwairi</a></li>
+                <li><hr class="dropdown-divider"></li>
+              </ul>
+            </li>
+          </ul>
+          <div class="language-switcher">
+            <a href="index.html" class="lang-btn">AR</a>
+            <span class="divider"></span>
+            <a href="indexen.html" class="lang-btn active">EN</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="header" style="margin-top: 50px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-sm-6"></div>
+      </div>
+    </div>
+  </div>
+  <div class="cancon container" id="home">
+    <div class="can wow rotateInDownLeft ">
+      <h4 style="font-family: 'Cairo', sans-serif;font-size: 22px; font-weight: 600;"> Welcome </h4>
+      <h3><span>Jordanian Arabic Doctors Association in Germany - (JAD)</span></h3>
+      <h3>Our Partners in <span>Humanity</span> and Health Services</h3>
+      <br>
+      <div class="social wow hinge" data-wow-duration="2s" data-wow-delay="3s" style="justify-content: left;">
+         <a href="https://www.facebook.com/groups/1957611257670791/?ref=share"><img src="icon/f.png"></a>
+        <a href="https://t.me/+lqQE5fZkLAhmMWZi"><img src="icon/t.png"></a>
+        <a href="https://chat.whatsapp.com/LWyUCijnA7ZJoa5JADImzI?mode=wwt"><img src="icon/w.png"></a>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+<h2 class="wow rollIn" style="color: #3cbbff;text-align: center;">Achievements</h2> 
+<div class="achievements-wrapper">
+  <div class="carousel-3d">
+    <div class="item"><img src="img/1.jpeg" alt="Achievement 1"></div>
+    <div class="item"><img src="img/2.jpeg" alt="Achievement 2"></div>
+    <div class="item"><img src="img/3.jpeg" alt="Achievement 3"></div>
+    <div class="item"><img src="img/4.jpeg" alt="Achievement 4"></div>
+  </div>
+</div>
+<hr>
+
+<h2 class="wow rollIn" style="color: #3cbbff;text-align: center;">News</h2> 
+<section class="premium-news">
+  <div class="news-grid">
+    
+    <article class="modern-card">
+      <div class="card-image">
+        <img src="img/n1.png" alt="Yazan Al-Naimat Treatment">
+        <div class="category-badge">Press Coverage</div>
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">JAD Confirms Readiness to Treat Yazan Al-Naimat</h2>
+        <p class="card-excerpt">The doctors' association announces full readiness to follow up on the health status of national team player Yazan Al-Naimat and provide the best care.</p>
+        <div class="publishers-section">
+          <span class="source-label">Published in:</span>
+          <div class="chips-container">
+            <a href="#" class="news-chip">Ad-Dustour</a>
+            <a href="#" class="news-chip">Al-Taj News</a>
+            <a href="#" class="news-chip">Johina News</a>
+            <a href="#" class="news-chip">Al-Anbat</a>
+            <a href="#" class="news-chip">Nabaa Agency</a>
+            <a href="#" class="news-chip">Deeretna News</a>
+            <a href="#" class="news-chip">Nabd App</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="modern-card">
+      <div class="card-image">
+        <img src="img/n3.png" alt="Sada Al-Shaab">
+        <div class="category-badge">Local News</div>
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Media Coverage in Sada Al-Shaab and Nabaa Jordan</h2>
+        <p class="card-excerpt">Special follow-up from Sada Al-Shaab newspaper in its issue on Tuesday, Oct 7, 2025, regarding recent activities.</p>
+        <div class="publishers-section">
+          <span class="source-label">Published in:</span>
+          <div class="chips-container">
+            <a href="#" class="news-chip">Sada Al-Shaab</a>
+            <a href="#" class="news-chip">Nabaa Jordan Agency</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="modern-card">
+      <div class="card-image">
+        <img src="img/n4.jpg" alt="Al-Budour Congratulations">
+        <div class="category-badge">International Coverage</div>
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">JAD Congratulates Al-Budour</h2>
+        <p class="card-excerpt">The association sends congratulations and appreciation amid media celebration from major Jordanian news sites.</p>
+        <div class="publishers-section">
+          <span class="source-label">Published in:</span>
+          <div class="chips-container">
+            <a href="#" class="news-chip">Ammon News</a>
+            <a href="#" class="news-chip">Akhbar Al-Yoom</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="modern-card">
+      <div class="card-image">
+        <img src="img/n5.png" alt="Madaba Hospital">
+        <div class="category-badge">Investment & Health</div>
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Partnership Agreement for New Madaba Hospital</h2>
+        <p class="card-excerpt">Valuing the investment partnership between public and private sectors to build a more comprehensive and sustainable health system.</p>
+        <div class="publishers-section">
+          <span class="source-label">Published in:</span>
+          <div class="chips-container">
+            <a href="#" class="news-chip">Ammon News</a>
+            <a href="#" class="news-chip">Saraha News</a>
+            <a href="#" class="news-chip">Nabaa News (Dr. Ibrahim)</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="modern-card">
+      <div class="card-image">
+        <img src="img/n6.png" alt="Crown Prince Birthday">
+        <div class="category-badge">National Occasions</div>
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">JAD Congratulates Crown Prince on his 31st Birthday</h2>
+        <p class="card-excerpt">The association family extended its warmest congratulations to HRH Prince Al Hussein bin Abdullah II.</p>
+        <div class="publishers-section">
+          <span class="source-label">Published in:</span>
+          <div class="chips-container">
+            <a href="#" class="news-chip">Ammon News</a>
+            <a href="#" class="news-chip">As-Sawsana</a>
+            <a href="#" class="news-chip">Madar Al-Sa'a</a>
+            <a href="#" class="news-chip">Nabaa Jordan</a>
+            <a href="#" class="news-chip">Tawasul Network</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="modern-card">
+      <div class="card-image">
+        <img src="img/n7.png" alt="Medical Seminar">
+        <div class="category-badge">Educational Events</div>
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Seminar on Medical Residency in Germany, Austria, and Switzerland</h2>
+        <p class="card-excerpt">An introductory seminar for doctors and medical students interested in working in Europe, presented by Dr. Jamil Hijazin in Amman.</p>
+        <div class="publishers-section">
+          <span class="source-label">Published in:</span>
+          <div class="chips-container">
+            <a href="#" class="news-chip">Ammon News</a>
+            <a href="#" class="news-chip">Nabaa Jordan</a>
+            <a href="#" class="news-chip">Madar Al-Sa'a</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="modern-card">
+      <div class="card-image">
+        <img src="img/n8.png" alt="Independence Day">
+        <div class="category-badge">National Occasions</div>
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">JAD Congratulates the King and the Nation on Independence Day</h2>
+        <p class="card-excerpt">Extensive media coverage of the association's congratulations to HM King Abdullah II on the anniversary of Jordan's independence.</p>
+        <div class="publishers-section">
+          <span class="source-label">Published in:</span>
+          <div class="chips-container">
+            <a href="#" class="news-chip">Ammon</a>
+            <a href="#" class="news-chip">As-Sawsana</a>
+            <a href="#" class="news-chip">Garaa News</a>
+            <a href="#" class="news-chip">Nabaa Jordan</a>
+            <a href="#" class="news-chip">Madar Al-Sa'a</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="modern-card">
+      <div class="card-image">
+        <img src="img/n9.png" alt="Union Congratulations">
+        <div class="category-badge">Union News</div>
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Union Congratulations: Aya Al-Asmar and Dr. Issa Al-Khashashneh</h2>
+        <p class="card-excerpt">Jordanian doctors in Germany congratulate Aya Al-Asmar on the position of Captain, and Dr. Ibrahim congratulates Dr. Issa Al-Khashashneh.</p>
+        <div class="publishers-section">
+          <span class="source-label">Published in:</span>
+          <div class="chips-container">
+            <a href="#" class="news-chip">Ammon (Asmar)</a>
+            <a href="#" class="news-chip">Ammon (Khashashneh)</a>
+            <a href="#" class="news-chip">Jordan News</a>
+            <a href="#" class="news-chip">Akhbar Al-Yoom</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<hr>
+
+<h2 class="wow rollIn" style="color: #3cbbff;text-align: center;">Activities and Seminars</h2> 
+<div class="activities-section">
+
+    <div class="als-container">
+        <div class="als-card">
+            <div class="als-poster-container">
+                <div class="als-badge">Note: Lecture will be rescheduled 📢</div>
+                <img src="img/adn2.jpg" alt="Germany Seminar" class="als-course-poster">
+            </div>
+
+            <div class="als-content">
+                <h1 class="als-title">Medical Practice & Residency in Europe</h1>
+                <p class="als-info-brief">A dialogue seminar with Dr. Jamil Hijazin for doctors interested in Germany, Austria, and Switzerland.</p>
+
+                <button class="als-details-btn" onclick="toggleGenericDetails(this)">Read Full Details +</button>
+                <div class="als-details-content">
+                    📍 <b>Location:</b> Language Generation Center – University of Jordan Street<br>
+                    🕔 <b>Time:</b> 5:00 - 6:30 PM<br>
+                    ✅ <b>Topics:</b> Residency steps, Equivalence (Approbation), and professional life.
+                </div>
+
+                <button class="als-action-btn auto-date-check" 
+                        data-date="2025-06-12" 
+                        data-link="https://www.facebook.com/share/1B1Td2wSB9/">
+                    Thursday Lecture 12.06
+                </button>
+<br>
+                <button class="als-action-btn auto-date-check" 
+                        data-date="2025-06-14" 
+                        data-link="https://www.facebook.com/share/15XnZ3pt9w/">
+                    Saturday Lecture 14.06
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="als-container">
+        <div class="als-card">
+            <div class="als-poster-container">
+                <div class="als-badge">Limited Seats!</div>
+                <img src="img/adn1.jpeg" alt="ALS Course" class="als-course-poster">
+            </div>
+
+            <div class="als-content">
+                <h1 class="als-title">Advanced Life Support (ALS) Course</h1>
+                <p class="als-info-brief">Certified by the European Resuscitation Council (ERC). A basic requirement for doctors wishing to work abroad.</p>
+
+                <button class="als-details-btn" onclick="toggleGenericDetails(this)">Read Full Details +</button>
+                <div class="als-details-content">
+                    In cooperation with (EgRC) and JAD Association.<br>
+                    📍 <b>Location:</b> Amman - Abdullah Ghosheh Street.<br>
+                    📞 <b>Contact:</b> 0797070733
+                </div>
+
+                <button class="als-action-btn auto-date-check" 
+                        data-date="2025-12-23" 
+                        data-link="https://forms.gle/dLEKLeHqXvMdSrUS7">
+                    Book a Seat in the Course
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function toggleGenericDetails(btn) {
+        const content = btn.nextElementSibling;
+        content.style.display = (content.style.display === 'block') ? 'none' : 'block';
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const today = new Date();
+        
+        document.querySelectorAll('.auto-date-check').forEach(btn => {
+            const targetDate = new Date(btn.getAttribute('data-date'));
+            const link = btn.getAttribute('data-link');
+            const originalText = btn.innerText;
+
+            if (today > targetDate) {
+                btn.innerText = originalText + " (Expired)";
+                btn.classList.add('als-btn-expired');
+                btn.onclick = (e) => {
+                    e.preventDefault();
+                    alert("This seminar/course has ended. Follow us for upcoming dates!");
+                };
+            } else {
+                btn.classList.add('als-btn-active');
+                btn.onclick = () => window.location.href = link;
+            }
+        });
+    });
+</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+    integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+    crossorigin="anonymous"></script>
+
+</body>
+</html>
